@@ -29,7 +29,7 @@
 https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1
 
 <h2>Ссылка на GitHubPages</h2>
-https://eve982.github.io/Mesto/
+https://eve982.github.io/mesto/index.html
 
 
 <h2>Mesto</h2>
@@ -63,4 +63,4 @@ The service provides an opportunity to create your profile and post photos of pl
 https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1
 
 <h2>GitHubPages Link</h2>
-https://eve982.github.io/Mesto/
+https://eve982.github.io/mesto/index.html
