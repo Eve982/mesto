@@ -1,0 +1,32 @@
+.profile__activity {
+    margin: 0;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.214;
+    color: #FFFFFF;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .profile__activity {
+        font-size: 16px;
+        line-height: 1.222;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .profile__activity {
+        justify-self: start;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .profile__activity {
+        font-size: 18px;
+        line-height: 1.222;
+    }
+}
