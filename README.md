@@ -18,11 +18,12 @@
     <li>методоллогия БЭМ (Nested);</li>
     <li>анимация;</li>
     <li>позиционирование;</li>
+    <li>flex и grid-layouts;</li>
+    <li>псевдоклассы и псевдоэлементы;</li>
     <li>JavaScript (стандарт ES6);</li>
     <li>ООП;</li>
-    <li>;</li>
-    <li>flex и grid-layouts;</li>
-    <li>псевдоклассы и псевдоэлементы.</li>
+    <li>DOM;</li>
+    <li>колбэк функции.</li>
 </ul>
   
 <h2>Ссылка на макет в Figma</h2>
@@ -52,11 +53,12 @@ The service provides an opportunity to create your profile and post photos of pl
     <li>BEM methodology (Nested);</li>
     <li>animation;</li>
     <li>positioning;</li>
+    <li>flex and grid-layouts;</li>
+    <li>pseudo-classes and pseudo-elements;</li>
     <li>JavaScript (ES6 standard);</li>
     <li>OOP;</li>
-    <li>;</li>
-    <li>flex and grid-layouts;</li>
-    <li>pseudo-classes and pseudo-elements.</li>
+    <li>DOM;</li>
+    <li>callback functions.</li>
 </ul>
 
 <h2>Link to the layout in Figma</h2>

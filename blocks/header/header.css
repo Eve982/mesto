@@ -6,12 +6,14 @@
 
 @media screen and (min-width: 768px) {
     .header {
-        padding: 28px 100px 0 100px;
+        margin: 28px 100px 0 100px;
+        padding: 0;
     }
 }
 
 @media screen and (min-width: 1280px) {
     .header {
-        padding: 45px 200px 0 200px;
+        height: 74px;
+        margin: 45px 200px 0 200px;
     }
 }

@@ -4,13 +4,15 @@
     justify-items:center;
     align-items: center;
     column-gap: 10px;
-    row-gap: 14px;
+    row-gap: 4px;
     overflow: hidden;
+    margin-left: 28px;
 }
 
 @media screen and (min-width: 768px) {
     .profile__name-container {
         column-gap: 18px;
-        row-gap: 16px;
+        row-gap: 4px;
+        margin-left: 0;
     }
 }

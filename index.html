@@ -15,69 +15,57 @@
         <main class="container">
             <section class="profile">
                 <div class="profile__info">
-                    <img src="./images/photo-kusto.jpg" alt="Фотография французского исследователя мирового океана Жака-Ива Кусто." class="profile__avatar">
+                    <img src="./images/photo-kusto.jpg" alt="Фотография профиля." class="profile__avatar">
                     <div class="profile__name-container">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <button type="submit" class="profile__name-edit-button hover-opacity"></button>
+                        <button type="button" class="profile__name-edit-button hover-opacity" aria-label="Редактировать профиль."></button>
                         <p class="profile__activity">Исследователь океана</p>
                     </div>
                 </div>
-                <button class="profile__button hover-opacity"></button>
+                <button type="button" class="profile__button hover-opacity" aria-label="Добавить место."></button>
             </section>
             <section>
                 <ul class="elements">
                     <li class="element">
                         <img src="./images/karachaevsk.jpg" alt="Древний полуразрушенный храм в городе Карачаевск." class="element__image">
-                        <div>
-                            <div class="element__name">
-                                <h2 class="element__place">Карачаевск</h2>
-                                <button type="button" class="element__group"></button>
-                            </div>
+                        <div class="element__name">
+                            <h2 class="element__place">Карачаевск</h2>
+                            <button type="button" class="element__group" aria-label="Поставить лайк"></button>
                         </div>
                     </li>
                     <li class="element">
                         <img src="./images/elbrus.jpg" alt="Равнина и Эльбрус на горизонте снятый на закате." class="element__image">
-                        <div>
-                            <div class="element__name">
-                                <h2 class="element__place">Гора Эльбрус</h2>
-                                <button type="button" class="element__group"></button>
-                            </div>
+                        <div class="element__name">
+                            <h2 class="element__place">Гора Эльбрус</h2>
+                            <button type="button" class="element__group" aria-label="Поставить лайк."></button>
                         </div>
                     </li>
                     <li class="element">
                         <img src="./images/dombay.jpg" alt="Заснеженные горные вершины Домбая на фоне верхушек густого леса." class="element__image">
-                        <div>
-                            <div class="element__name">
-                                <h2 class="element__place">Домбай</h2>
-                                <button class="element__group"></button>
-                            </div>
+                        <div class="element__name">
+                            <h2 class="element__place">Домбай</h2>
+                            <button type="button" class="element__group" aria-label="Поставить лайк."></button>
+                        </div>
+                    </li>
+                    <li class="element">
+                        <img src="./images/elbrus.jpg" alt="Равнина и Эльбрус на горизонте снятый на закате." class="element__image">
+                        <div class="element__name">
+                            <h2 class="element__place">Гора Эльбрус</h2>
+                            <button type="button" class="element__group" aria-label="Поставить лайк."></button>
+                        </div>
+                    </li>
+                    <li class="element">
+                        <img src="./images/dombay.jpg" alt="Заснеженные горные вершины Домбая на фоне верхушек густого леса." class="element__image">
+                        <div class="element__name">
+                            <h2 class="element__place">Домбай</h2>
+                            <button type="button" class="element__group" aria-label="Поставить лайк."></button>
                         </div>
                     </li>
                     <li class="element">
                         <img src="./images/karachaevsk.jpg" alt="Древний полуразрушенный храм в городе Карачаевск." class="element__image">
-                        <div>
-                            <div class="element__name">
-                                <h2 class="element__place">Карачаевск</h2>
-                                <button class="element__group"></button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <img src="./images/elbrus.jpg" alt="Равнина и Эльбрус на горизонте снятый на закате." class="element__image">
-                        <div>
-                            <div class="element__name">
-                                <h2 class="element__place">Гора Эльбрус</h2>
-                                <button class="element__group"></button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <img src="./images/dombay.jpg" alt="Заснеженные горные вершины Домбая на фоне верхушек густого леса." class="element__image">
-                        <div>
-                            <div class="element__name">
-                                <h2 class="element__place">Домбай</h2>
-                                <button class="element__group"></button>
-                            </div>
+                        <div class="element__name">
+                            <h2 class="element__place">Карачаевск</h2>
+                            <button type="button" class="element__group" aria-label="Поставить лайк."></button>
                         </div>
                     </li>
                 </ul>
@@ -89,16 +77,12 @@
 
         <div class="popup">
             <div class="popup__container">
-                <button class="popup__close hover-opacity"></button>
+                <button type="button" class="popup__close hover-opacity" aria-label="Закрыть форму редактирования."></button>
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form action="#" class="popup__edit-form">
-                    <div class="popup__input-border-underline">
-                        <input type="text" class="popup__input popup__input-name">
-                    </div>
-                    <div class="popup__input-border-underline">
-                        <input type="text" class="popup__input popup__input-activity">
-                    </div>
-                    <button type="submit" class="popup__button">Сохранить</button>
+                <form action="#" name="edit-profile" class="popup__edit-form">
+                    <input type="text" name="name" class="popup__input popup__input_edit_name">
+                    <input type="text" name="activity" class="popup__input popup__input_edit_activity">
+                    <button type="submit" class="popup__button" aria-label="Сохранить введенные данные.">Сохранить</button>
                 </form>
             </div>
         </div>
