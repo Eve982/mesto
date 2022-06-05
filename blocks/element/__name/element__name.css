@@ -1,7 +1,7 @@
 .element__name {
-    height: 79px;
     display: grid;
     grid-template-columns: 1fr 44px;
+    grid-template-rows: 79px;
     justify-content: space-between;
     align-items: center;
     background-color: #FFFFFF;
