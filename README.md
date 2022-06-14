@@ -6,6 +6,9 @@
 <ul>
     <li>Редактирование профиля</li>
     <li>Поставить / убрать лайк</li>
+    <li>Добавить карточку места: загрузить фотографию и название.</li>
+    <li>Увеличить фотографию.</li>
+    <li>Удалить карточку места.</li>
 </ul>
 
 <h2>Сайт создан с применением следующих технологий:</h2>
@@ -21,6 +24,12 @@
     <li>flex и grid-layouts;</li>
     <li>псевдоклассы и псевдоэлементы;</li>
     <li>JavaScript (стандарт ES6);</li>
+    <li>пользовательские формы;</li>
+    <li>template-элементы;</li>
+    <li>клонирование элементов;</li>
+    <li>event;</li>
+    <li>слушатели событий;</li>
+    <li>обработка массивов;</li>
     <li>ООП;</li>
     <li>DOM;</li>
     <li>колбэк функции.</li>
@@ -41,6 +50,9 @@ The service provides an opportunity to create your profile and post photos of pl
 <ul>
     <li>Editing a profile</li>
     <li>Like/dislike</li>
+    <li>Add place card: download photo and write a name.</li>
+    <li>Zoom photo.</li>
+    <li>Delete place card.</li>
 </ul>
 
 <h2>The site was created using the following technologies:</h2>
@@ -56,6 +68,12 @@ The service provides an opportunity to create your profile and post photos of pl
     <li>flex and grid-layouts;</li>
     <li>pseudo-classes and pseudo-elements;</li>
     <li>JavaScript (ES6 standard);</li>
+    <li>user forms;</li>
+    <li>template-elements;</li>
+    <li>cloning elements;</li>
+    <li>event;</li>
+    <li>event listeners;</li>
+    <li>arrays;</li>
     <li>OOP;</li>
     <li>DOM;</li>
     <li>callback functions.</li>

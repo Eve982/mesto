@@ -1,4 +1,4 @@
-.element__group {
+.element__like {
     width: 22px;
     height: 19px;
     padding: 0;
@@ -8,6 +8,6 @@
     cursor: pointer;
 }
 
-.element__group:hover {
+.element__like:hover {
     opacity: 0.5;
 }

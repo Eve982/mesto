@@ -1,0 +1,35 @@
+.popup__photo-name {
+    font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #FFFFFF;
+    margin-top: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 70vw;
+}
+
+@media screen and (min-width: 600px) {
+    .popup__photo-name {
+        max-width: 58vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .popup__photo-name {
+        max-width: 43vw;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .popup__photo-name {
+        max-width: 35vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .popup__photo-name {
+        max-width: 30vw;
+    }
+}
