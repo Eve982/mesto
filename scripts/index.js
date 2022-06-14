@@ -1,9 +1,9 @@
 /** Попап редактирования профиля. */
-const popupProfile = document.querySelector('.popup-profile');
+const popupProfile = document.querySelector('.popup_type_profile');
 /** Попап добавления места. */
-const popupPlace = document.querySelector('.popup-place');
+const popupPlace = document.querySelector('.popup_type_place');
 /** Попап увеличения фото. */
-const popupPhoto = document.querySelector('.popup-photo');
+const popupPhoto = document.querySelector('.popup_type_photo');
 /** Класс открытого попапа. */
 const POPUP_IS_OPEN_CLASSNAME = 'popup_opened';
 /**--------------------------------------------------------------------------------------- */
@@ -97,32 +97,29 @@ function submitHandlerFormProfile(evt) {
 };
 popupProfile.querySelector('.popup__edit-form').addEventListener('submit', submitHandlerFormProfile);
 
-/** Лайк. */
-function handleLikeClick(evt) {
-    evt.target.classList.toggle('element__like_active');
-};
-
 /** Заполнение шаблона карточки места. */
-newPlace = place => {
+createPlace = place => {
     const placeTemplate = document.querySelector('.place-template').content;
     const placeElement = placeTemplate.querySelector('.element').cloneNode(true);
-    placeElement.querySelector('.element__image').src = place.link;
-    placeElement.querySelector('.element__image').alt = place.name;
+    const imgTemplate = placeElement.querySelector('.element__image');
+    imgTemplate.src = place.link;
+    imgTemplate.alt = place.name;
     placeElement.querySelector('.element__place').textContent = place.name;
     /** Слушатель лайков. */
     placeElement.querySelector('.element__like').addEventListener('click', function handleLikeClick(evt) {
         evt.target.classList.toggle('element__like_active');
     });
     /** Слушатель кнопок удаления мест. */
-    placeElement.querySelector('.element__delete-place-button').addEventListener('click', evt => {
+    placeElement.querySelector('.element__delete-place-button').addEventListener('click', function deletePlace (evt) {
         const placeToDelete = evt.currentTarget.parentElement;
         placeToDelete.remove();
     });
     /** Открытие попапа фото. */
-    placeElement.querySelector('.element__image').addEventListener('click', openPopupPhoto = () => {
+    imgTemplate.addEventListener('click', function openPopupPhoto () {
+        const imgPlace = popupPhoto.querySelector('.popup__photo-image');
         popupPhoto.querySelector('.popup__photo-name').textContent = place.name;
-        popupPhoto.querySelector('.popup__photo-image').src = place.link;
-        popupPhoto.querySelector('.popup__photo-image').alt = place.name;
+        imgPlace.src = place.link;
+        imgPlace.alt = place.name;
         popupPhoto.closest('.popup').style.background = 'rgba(0, 0, 0, 0.9)';
         openPopup(popupPhoto);
     });
@@ -131,16 +128,16 @@ newPlace = place => {
 
 /** Добавление карточек мест из массива на страницу. */
 initialCards.forEach(item => {
-    placeList.prepend(newPlace(item));    
+    placeList.prepend(createPlace(item));    
 });
 
 /** Добавление пользовательской карточки места на страницу по кнопке "Сохранить". */
-popupPlaceForm.addEventListener('submit', evt => {
+popupPlaceForm.addEventListener('submit', function addPlace (evt) {
     evt.preventDefault();
     const userPlace = {};
     userPlace.name = inputPlace.value;
     userPlace.link = inputLink.value;
-    placeList.prepend(newPlace(userPlace));
+    placeList.prepend(createPlace(userPlace));
     closePopup(popupPlace);
     popupPlaceForm.reset();
 });
