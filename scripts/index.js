@@ -123,6 +123,7 @@ newPlace = place => {
         popupPhoto.querySelector('.popup__photo-name').textContent = place.name;
         popupPhoto.querySelector('.popup__photo-image').src = place.link;
         popupPhoto.querySelector('.popup__photo-image').alt = place.name;
+        popupPhoto.closest('.popup').style.background = 'rgba(0, 0, 0, 0.9)';
         openPopup(popupPhoto);
     });
     return placeElement;
