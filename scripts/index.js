@@ -34,34 +34,6 @@ const inputLink = popupPlace.querySelector('.popup__input_edit_link');
 /** Форма добавления места. */
 const popupPlaceForm = popupPlace.querySelector('.popup__edit-form');
 /**--------------------------------------------------------------------------------------- */
-/** Массив мест. */
-const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-  ];
-/**--------------------------------------------------------------------------------------- */
 
 /** Открытие попапов. */
 function openPopup(popupElement) {
@@ -73,23 +45,15 @@ function closePopup(popupElement) {
     popupElement.classList.remove(POPUP_IS_OPEN_CLASSNAME);
 };
 
-/** Закрытие попапов по нажатию крестика (без сохранения). */
-document.querySelectorAll('.popup__close-button').forEach(item => {
-    item.addEventListener('click', function () {
-        closePopup(item.closest('.popup'));
-   });
-});
-
-/** Открытие попапа редактирования профиля. */
-profileEditButton.addEventListener('click', function() {
-    openPopup(popupProfile);
-    inputName.value = profileName.textContent;
-    inputActivity.value = profileActivity.textContent;
-});
-
-/** Открытие попапа добавления места. */
-newPlaceButton.addEventListener('click', function() {
-    openPopup(popupPlace);
+/** Добавление пользовательской карточки места на страницу по кнопке "Сохранить". */
+popupPlaceForm.addEventListener('submit', function addPlace (evt) {
+    evt.preventDefault();
+    const userPlace = {};
+    userPlace.name = inputPlace.value;
+    userPlace.link = inputLink.value;
+    placeList.prepend(createPlace(userPlace));
+    closePopup(popupPlace);
+    popupPlaceForm.reset();
 });
 
 /** Сохранение введенных в форму редактирования профиля данных и закрытие попапа по нажатию кнопки "Сохранить". */
@@ -102,7 +66,7 @@ function submitHandlerFormProfile(evt) {
 popupProfile.querySelector('.popup__edit-form').addEventListener('submit', submitHandlerFormProfile);
 
 /** Заполнение шаблона карточки места. */
-createPlace = place => {
+function createPlace(place) {
     const placeTemplate = document.querySelector('.place-template').content;
     const placeElement = placeTemplate.querySelector('.element').cloneNode(true);
     const imgTemplate = placeElement.querySelector('.element__image');
@@ -128,18 +92,26 @@ createPlace = place => {
     return placeElement;
 };
 
-/** Добавление карточек мест из массива на страницу. */
-initialCards.forEach(item => {
-    placeList.prepend(createPlace(item));    
+/** Слушатель - открытие попапа редактирования профиля. */
+profileEditButton.addEventListener('click', function() {
+    openPopup(popupProfile);
+    inputName.value = profileName.textContent;
+    inputActivity.value = profileActivity.textContent;
 });
 
-/** Добавление пользовательской карточки места на страницу по кнопке "Сохранить". */
-popupPlaceForm.addEventListener('submit', function addPlace (evt) {
-    evt.preventDefault();
-    const userPlace = {};
-    userPlace.name = inputPlace.value;
-    userPlace.link = inputLink.value;
-    placeList.prepend(createPlace(userPlace));
-    closePopup(popupPlace);
-    popupPlaceForm.reset();
+/** Слушатель - открытие попапа добавления места. */
+newPlaceButton.addEventListener('click', function() {
+    openPopup(popupPlace);
+});
+
+/** Слушатель - закрытие попапов по нажатию крестика (без сохранения). */
+document.querySelectorAll('.popup__close-button').forEach(item => {
+    item.addEventListener('click', function () {
+        closePopup(item.closest('.popup'));
+   });
+});
+
+/** Цикл добавлния карточек мест из массива на страницу. */
+initialCards.forEach(item => {
+    placeList.prepend(createPlace(item));    
 });
