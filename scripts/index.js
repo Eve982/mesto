@@ -11,6 +11,10 @@ const POPUP_IS_OPEN_CLASSNAME = 'popup_opened';
 const profileEditButton = document.querySelector('.profile__name-edit-button');
 /** Кнопка добавления места. */
 const newPlaceButton = document.querySelector('.profile__add-place-button');
+/** Тег img попапа увеличения фото. */
+const imgPlace = popupPhoto.querySelector('.popup__photo-image');
+/** Тег figcaption попапа увеличения фото. */
+const figcaptionPopupPhoto = popupPhoto.querySelector('.popup__photo-name');
 /**--------------------------------------------------------------------------------------- */
 /** Имя профиля. */
 const profileName = document.querySelector('.profile__name');
@@ -116,11 +120,9 @@ createPlace = place => {
     });
     /** Открытие попапа фото. */
     imgTemplate.addEventListener('click', function openPopupPhoto () {
-        const imgPlace = popupPhoto.querySelector('.popup__photo-image');
-        popupPhoto.querySelector('.popup__photo-name').textContent = place.name;
+        figcaptionPopupPhoto.textContent = place.name;
         imgPlace.src = place.link;
         imgPlace.alt = place.name;
-        popupPhoto.closest('.popup').style.background = 'rgba(0, 0, 0, 0.9)';
         openPopup(popupPhoto);
     });
     return placeElement;
