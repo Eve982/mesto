@@ -11,9 +11,9 @@ const POPUP_IS_OPEN_CLASSNAME = 'popup_opened';
 const profileEditButton = document.querySelector('.profile__name-edit-button');
 /** Кнопка добавления места. */
 const newPlaceButton = document.querySelector('.profile__add-place-button');
-/** Тег img попапа увеличения фото. */
-const imgPlace = popupPhoto.querySelector('.popup__photo-image');
-/** Тег figcaption попапа увеличения фото. */
+/** Тег img при нажатии на который увеличивается фото. */
+const imgPopupPhoto = popupPhoto.querySelector('.popup__photo-image');
+/** Тег figcaption (подпись) попапа увеличения фото. */
 const figcaptionPopupPhoto = popupPhoto.querySelector('.popup__photo-name');
 /**--------------------------------------------------------------------------------------- */
 /** Имя профиля. */
@@ -23,49 +23,69 @@ const profileActivity = document.querySelector('.profile__activity');
 /** Список мест. */
 const placeList = document.querySelector('.elements');
 /**--------------------------------------------------------------------------------------- */
+/** Форма редактирования профиля. */
+const formEditProfile = document.forms.editProfile;
 /** Поле ввода имени профиля. */
-const inputName = popupProfile.querySelector('.popup__input_edit_name');
+const inputName = formEditProfile.elements.profileName;
 /** Поле ввода хобби. */
-const inputActivity = popupProfile.querySelector('.popup__input_edit_activity');
-/** Поле ввода названия места. */
-const inputPlace = popupPlace.querySelector('.popup__input_edit_place');
-/** Поле ввода ссылки. */
-const inputLink = popupPlace.querySelector('.popup__input_edit_link');
+const inputActivity = formEditProfile.elements.profileActivity;
 /** Форма добавления места. */
-const popupPlaceForm = popupPlace.querySelector('.popup__edit-form');
+const formNewPlace = document.forms.newPlace;
+/** Поле ввода названия места. */
+const inputPlace = formNewPlace.elements.placeName;
+/** Поле ввода ссылки. */
+const inputLink = formNewPlace.elements.placeLink;
 /**--------------------------------------------------------------------------------------- */
 
-/** Открытие попапов. */
+/** Функция общая - открыть попап. */
 function openPopup(popupElement) {
     popupElement.classList.add(POPUP_IS_OPEN_CLASSNAME);
 };
 
-// /** Закрытие попапов. */
+/** Функция общая - закрыть попап. */
 function closePopup(popupElement) {
     popupElement.classList.remove(POPUP_IS_OPEN_CLASSNAME);
 };
 
-/** Добавление пользовательской карточки места на страницу по кнопке "Сохранить". */
-popupPlaceForm.addEventListener('submit', function addPlace (evt) {
-    evt.preventDefault();
-    const userPlace = {};
-    userPlace.name = inputPlace.value;
-    userPlace.link = inputLink.value;
-    placeList.prepend(createPlace(userPlace));
-    closePopup(popupPlace);
-    popupPlaceForm.reset();
-});
+/** Функция общая - закрытие попапа по нажатию ESC. */
+function closePopupByEsc (evt) {
+    if (evt.key === 'Escape') {
+        const openedPopup = document.querySelector('.popup_opened');
+        if(openedPopup) {
+        openedPopup.classList.remove('popup_opened');
+        }
+    }
+}
 
-/** Сохранение введенных в форму редактирования профиля данных и закрытие попапа по нажатию кнопки "Сохранить". */
+/** Функция общая - закрытие попапа кликом на оверлэй. */
+function closePopupByOverlay (evt) {
+    if (evt.target.classList.contains('popup'))
+    evt.target.classList.remove('popup_opened');
+};
+
+/** Функция общая - переключение лайка. */
+function toggleLike (evt) {
+    if (evt.target.classList.contains('element__like'))
+    evt.target.classList.toggle('element__like_active');
+};
+
+/** Функция общая - удаление места. */
+function deletePlace (evt) {
+    if (evt.target.classList.contains('element__delete-place-button'))
+    evt.target.parentElement.remove();
+};
+
+/** Сохранение введенных в форму редактирования профиля данных и закрытие попапа по нажатию
+ * кнопки "Сохранить". */
 function submitHandlerFormProfile(evt) {
     evt.preventDefault();
     profileName.textContent = inputName.value;
     profileActivity.textContent = inputActivity.value;
     closePopup(popupProfile);
 };
-popupProfile.querySelector('.popup__edit-form').addEventListener('submit', submitHandlerFormProfile);
+formEditProfile.addEventListener('submit', submitHandlerFormProfile);
 
-/** Заполнение шаблона карточки места. */
+/** Функция - заполнение шаблона карточки места. */
 function createPlace(place) {
     const placeTemplate = document.querySelector('.place-template').content;
     const placeElement = placeTemplate.querySelector('.element').cloneNode(true);
@@ -73,34 +93,27 @@ function createPlace(place) {
     imgTemplate.src = place.link;
     imgTemplate.alt = place.name;
     placeElement.querySelector('.element__place').textContent = place.name;
-    /** Слушатель лайков. */
-    placeElement.querySelector('.element__like').addEventListener('click', function handleLikeClick(evt) {
-        evt.target.classList.toggle('element__like_active');
-    });
-    /** Слушатель кнопок удаления мест. */
-    placeElement.querySelector('.element__delete-place-button').addEventListener('click', function deletePlace (evt) {
-        const placeToDelete = evt.currentTarget.parentElement;
-        placeToDelete.remove();
-    });
     /** Открытие попапа фото. */
     imgTemplate.addEventListener('click', function openPopupPhoto () {
+        imgPopupPhoto.src = place.link;
+        imgPopupPhoto.alt = place.name;
         figcaptionPopupPhoto.textContent = place.name;
-        imgPlace.src = place.link;
-        imgPlace.alt = place.name;
         openPopup(popupPhoto);
     });
     return placeElement;
 };
 
-/** Слушатель - открытие попапа редактирования профиля. */
-profileEditButton.addEventListener('click', function() {
+/** Слушатель - открытие попапа редактирования профиля с записью данных профиля со страницы
+ * в поля ввода. */
+ profileEditButton.addEventListener('click', function openPopupProfile() {
     openPopup(popupProfile);
     inputName.value = profileName.textContent;
     inputActivity.value = profileActivity.textContent;
 });
 
+
 /** Слушатель - открытие попапа добавления места. */
-newPlaceButton.addEventListener('click', function() {
+newPlaceButton.addEventListener('click', function openPopupPlace() {
     openPopup(popupPlace);
 });
 
@@ -111,7 +124,30 @@ document.querySelectorAll('.popup__close-button').forEach(item => {
    });
 });
 
-/** Цикл добавлния карточек мест из массива на страницу. */
+/** Слушатель - закрытие попапов по нажатию ESC. */
+document.addEventListener('keyup', closePopupByEsc);
+
+/** Слушатель - закрытие попапа при клике мышью за пределами попапа. */
+document.addEventListener('click', closePopupByOverlay);
+
+/** Слушатель - добавление пользовательской карточки места на страницу по кнопке "Сохранить". */
+formNewPlace.addEventListener('submit', function addPlace (evt) {
+    evt.preventDefault();
+    const userPlace = {};
+    userPlace.name = inputPlace.value;
+    userPlace.link = inputLink.value;
+    placeList.prepend(createPlace(userPlace));
+    closePopup(popupPlace);
+    formNewPlace.reset();
+});
+
+/** Слушатель лайков (переключение). */
+placeList.addEventListener('click', toggleLike);
+
+/** Слушатель кнопок удаления мест. */
+placeList.addEventListener('click', deletePlace); 
+
+/** Цикл добавления карточек мест из массива на страницу. */
 initialCards.forEach(item => {
     placeList.prepend(createPlace(item));    
 });
