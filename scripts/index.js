@@ -14,7 +14,7 @@ const settings = {
     submitButtonSelector: '.popup__submit-button',
     inactiveButtonClass: 'popup__submit-button_disabled',
     inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__input-error-span_type_error-message',
+    errorClass: 'popup__input-error-span-message',
   };  
 /**--------------------------------------------------------------------------------------- */
 /** Кнопка редактирования профиля. */
