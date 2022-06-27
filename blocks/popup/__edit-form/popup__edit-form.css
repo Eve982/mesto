@@ -2,10 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 25px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
     .popup__edit-form {
         margin-bottom: 36px;
     }
