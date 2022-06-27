@@ -7,16 +7,6 @@ const popupPhoto = document.querySelector('.popup_type_photo');
 /** Класс открытого попапа. */
 const POPUP_IS_OPEN_CLASSNAME = 'popup_opened';
 /**--------------------------------------------------------------------------------------- */
-/** Настройки валидации. */
-const settings = {
-    formSelector: '.popup__edit-form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__submit-button',
-    inactiveButtonClass: 'popup__submit-button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__input-error-span-message',
-  };  
-/**--------------------------------------------------------------------------------------- */
 /** Кнопка редактирования профиля. */
 const profileEditButton = document.querySelector('.profile__name-edit-button');
 /** Кнопка добавления места. */
@@ -49,12 +39,25 @@ const inputLink = formNewPlace.elements.placeLink;
 /** Функция общая - закрытие попапа по нажатию ESC. */
 function closePopupByEsc (evt) {
     if(evt.key === 'Escape') {
-        const openedPopup = document.querySelector('.popup_opened');
+        const openedPopup = document.querySelector(`.${POPUP_IS_OPEN_CLASSNAME}`);
         if(openedPopup) {
-        openedPopup.classList.remove('popup_opened');
+        openedPopup.classList.remove(POPUP_IS_OPEN_CLASSNAME);
         }
     }
 }
+
+/** Функция общая - скрыть ошибки валидации при открытии попапа.*/
+function hideLastInputErrors (popupElement) {
+    if(popupElement.querySelector(settings.formSelector)) {
+    const formElement = popupElement.querySelector(settings.formSelector);
+    const inputElements = Array.from(formElement.querySelectorAll(settings.inputSelector));
+    inputElements.forEach(element => {
+        hideInputError(formElement, element);
+    });
+} else {
+    return;
+};
+};
 
 /** Функция общая - открыть попап. */
 function openPopup(popupElement) {
@@ -69,13 +72,8 @@ function openPopup(popupElement) {
     } else {
         return;
     };
-
-    /** Проверка валидности полей ввода при открытии попапов.*/
-    const formElement = popupElement.querySelector(settings.formSelector);
-    const inputElements = Array.from(formElement.querySelectorAll(settings.inputSelector));
-    inputElements.forEach(element => {
-    hideInputError(formElement, element);
-    });
+    
+    hideLastInputErrors(popupElement);
 };
 
 /** Функция общая - закрыть попап. */
@@ -89,7 +87,7 @@ function closePopup(popupElement) {
 /** Функция общая - закрытие попапа кликом на оверлэй. */
 function closePopupByOverlay (evt) {
     if (evt.target.classList.contains('popup'))
-    evt.target.classList.remove('popup_opened');
+    evt.target.classList.remove(POPUP_IS_OPEN_CLASSNAME);
 };
 
 /** Функция общая - переключение лайка. */
@@ -154,7 +152,7 @@ document.querySelectorAll('.popup__close-button').forEach(item => {
 });
 
 /** Слушатель - закрытие попапа при клике мышью за пределами попапа. */
-document.addEventListener('click', closePopupByOverlay);
+document.addEventListener('mousedown', closePopupByOverlay);
 
 /** Слушатель - добавление пользовательской карточки места на страницу по кнопке "Сохранить". */
 formNewPlace.addEventListener('submit', function addPlace (evt) {

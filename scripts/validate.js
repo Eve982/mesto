@@ -1,3 +1,12 @@
+/** Настройки валидации. */
+const settings = {
+  formSelector: '.popup__edit-form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit-button',
+  inactiveButtonClass: 'popup__submit-button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error-span-message',
+};  
 /** Функция общая - добавить полю ввода стили ошибки валидации. */
 const showInputError = (formElement, inputElement, errorMessage) => {
   /** Выбираем элемент ошибки конкретного поля ввода. */
@@ -61,12 +70,10 @@ const setEventListeners = (formElement) => {
 }; 
 
 /** Функция общая - отмена события submit по-умолчания у всех форм документа и передача форм на валидацию. */
-const enableValidation = () => {
+const enableValidation = (settings) => {
   const formList = Array.from(document.querySelectorAll(settings.formSelector));
   formList.forEach((formElement) => {
       setEventListeners(formElement);
   });
 };
 enableValidation(settings);
-
-
