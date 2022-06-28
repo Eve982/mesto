@@ -46,35 +46,28 @@ function closePopupByEsc (evt) {
     }
 }
 
-/** Функция общая - скрыть ошибки валидации при открытии попапа.*/
-function hideLastInputErrors (popupElement) {
-    if(popupElement.querySelector(settings.formSelector)) {
+/** Функция общая - открыть попап с формой. */
+function openPopupForm(popupElement) {
+    popupElement.classList.add(POPUP_IS_OPEN_CLASSNAME);
+    /** Слушатель добавить - закрытие попапов по нажатию ESC. */
+    document.addEventListener('keyup', closePopupByEsc);
+    /** Деактивировать кнопку submit при открытии. */
+    const buttonElement = popupElement.querySelector(settings.submitButtonSelector);
+    setDisabledButtonStyles(buttonElement);
+    /** Скрыть ошибки валидации. */
     const formElement = popupElement.querySelector(settings.formSelector);
     const inputElements = Array.from(formElement.querySelectorAll(settings.inputSelector));
     inputElements.forEach(element => {
         hideInputError(formElement, element);
     });
-} else {
-    return;
-};
-};
+}
 
-/** Функция общая - открыть попап. */
-function openPopup(popupElement) {
+/** Функция - открыть попап увеличения фото. */
+function openPopupPhoto(popupElement) {
     popupElement.classList.add(POPUP_IS_OPEN_CLASSNAME);
     /** Слушатель добавить - закрытие попапов по нажатию ESC. */
     document.addEventListener('keyup', closePopupByEsc);
-
-    /** Если попап содержит кнопку submit, добавить ей стили disabled по-умолчанию.*/
-    if(popupElement.querySelector(settings.submitButtonSelector)) {
-        const buttonElement = popupElement.querySelector(settings.submitButtonSelector);
-        setDisabledButtonStyles(buttonElement);
-    } else {
-        return;
-    };
-    
-    hideLastInputErrors(popupElement);
-};
+}
 
 /** Функция общая - закрыть попап. */
 function closePopup(popupElement) {
@@ -121,11 +114,11 @@ function createPlace(place) {
     imgTemplate.alt = place.name;
     placeElement.querySelector('.element__place').textContent = place.name;
     /** Открытие попапа фото. */
-    imgTemplate.addEventListener('click', function openPopupPhoto () {
+    imgTemplate.addEventListener('click', function openPopupZoom () {
         imgPopupPhoto.src = place.link;
         imgPopupPhoto.alt = place.name;
         figcaptionPopupPhoto.textContent = place.name;
-        openPopup(popupPhoto);
+        openPopupPhoto(popupPhoto);
     });
     return placeElement;
 };
@@ -133,7 +126,7 @@ function createPlace(place) {
 /** Слушатель - открытие попапа редактирования профиля с записью данных профиля со страницы
  * в поля ввода. */
  profileEditButton.addEventListener('click', function openPopupProfile() {
-    openPopup(popupProfile);
+    openPopupForm(popupProfile);
     inputName.value = profileName.textContent;
     inputActivity.value = profileActivity.textContent;
 });
@@ -141,7 +134,7 @@ function createPlace(place) {
 
 /** Слушатель - открытие попапа добавления места. */
 newPlaceButton.addEventListener('click', function openPopupPlace() {
-    openPopup(popupPlace);
+    openPopupForm(popupPlace);
 });
 
 /** Слушатель - закрытие попапов по нажатию крестика (без сохранения). */
