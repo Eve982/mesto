@@ -4,35 +4,31 @@
 
 <h2>Основной функционал</h2>
 <ul>
-    <li>Редактирование профиля</li>
-    <li>Поставить / убрать лайк</li>
-    <li>Добавить карточку места: загрузить фотографию и название.</li>
-    <li>Увеличить фотографию.</li>
+    <li>Редактирование профиля;</li>
+    <li>Поставить / убрать лайк;</li>
+    <li>Добавить карточку места: загрузить фотографию и название;</li>
+    <li>Увеличить фотографию;</li>
+    <li>Нативная валидация;</li>
+    <li>Возможность закрыть попап кликом на оверлэй или ESC;</li>
     <li>Удалить карточку места.</li>
 </ul>
 
 <h2>Сайт создан с применением следующих технологий:</h2>
 <ul>
-    <li>адаптивная верстка;</li>
-    <li>кроссбраузерная верстка;</li>
-    <li>нормализация стилей;</li>
-    <li>Верстка форм (текстовые поля и кнопки)</li>
-    <li>медиазапросы;</li>
-    <li>методоллогия БЭМ (Nested);</li>
+    <li>mobile-first;</li>
+    <li>адаптивная, кроссбраузерная верстка;</li>
+    <li>функциональное программирование JavaScript;</li>
+    <li>слушатели событий;</li>
+    <li>манипуляции с элементами DOM;</li>
+    <li>template-элементы;</li>
+    <li>попапы;</li>
+    <li>пользовательские формы;</li>
+    <li>валидация форм с использованием встроенных браузерных средств и JavaScript;</li>
     <li>анимация;</li>
-    <li>позиционирование;</li>
     <li>flex и grid-layouts;</li>
     <li>псевдоклассы и псевдоэлементы;</li>
-    <li>JavaScript (стандарт ES6);</li>
-    <li>пользовательские формы;</li>
-    <li>template-элементы;</li>
-    <li>клонирование элементов;</li>
-    <li>event;</li>
-    <li>слушатели событий;</li>
-    <li>обработка массивов;</li>
-    <li>ООП;</li>
-    <li>DOM;</li>
-    <li>колбэк функции.</li>
+    <li>БЭМ (Nested).</li>
+
 </ul>
   
 <h2>Ссылка на макет в Figma</h2>
@@ -50,33 +46,28 @@ The service provides an opportunity to create your profile and post photos of pl
 <ul>
     <li>Editing a profile</li>
     <li>Like/dislike</li>
-    <li>Add place card: download photo and write a name.</li>
-    <li>Zoom photo.</li>
+    <li>Add place card: download photo and write a name;</li>
+    <li>Zoom photo;</li>
+    <li>Native validation;</li>
+    <li>The ability to close a popup by clicking on its overlay or ESC;</li>
     <li>Delete place card.</li>
 </ul>
 
 <h2>The site was created using the following technologies:</h2>
 <ul>
-    <li>adaptive layout;</li>
-    <li>cross-browser layout;</li>
-    <li>normalization of styles;</li>
-    <li>layout of forms (text fields and buttons)</li>
-    <li>media queries;</li>
-    <li>BEM methodology (Nested);</li>
-    <li>animation;</li>
-    <li>positioning;</li>
-    <li>flex and grid-layouts;</li>
-    <li>pseudo-classes and pseudo-elements;</li>
-    <li>JavaScript (ES6 standard);</li>
-    <li>user forms;</li>
-    <li>template-elements;</li>
-    <li>cloning elements;</li>
-    <li>event;</li>
+    <li>mobile first;</li>
+    <li>adaptive, cross-browser layout;</li>
+    <li>JavaScript functional programming;</li>
     <li>event listeners;</li>
-    <li>arrays;</li>
-    <li>OOP;</li>
-    <li>DOM;</li>
-    <li>callback functions.</li>
+    <li>manipulations with DOM elements;</li>
+    <li>template-elements;</li>
+    <li>popups;</li>
+    <li>custom forms;</li>
+    <li>validation of forms using built-in browser tools and JavaScript;</li>
+    <li>animation;</li>
+    <li>flex and grid layouts;</li>
+    <li>pseudo-classes and pseudo-elements;</li>
+    <li>BEM (Nested).</li>
 </ul>
 
 <h2>Link to the layout in Figma</h2>
