@@ -25,7 +25,7 @@
     <li>манипуляции с элементами DOM;</li>
     <li>попапы;</li>
     <li>пользовательские формы;</li>
-    <li>валидация форм с использованием встроенных браузерных средств и JavaScript;</li>
+    <li>живая валидация форм с использованием браузерных средств и JavaScript;</li>
     <li>анимация;</li>
     <li>flex и grid-layouts;</li>
     <li>псевдоклассы и псевдоэлементы;</li>
@@ -67,7 +67,7 @@ The application provides an opportunity to create your profile and post photos o
     <li>manipulations with DOM elements;</li>
     <li>popups;</li>
     <li>custom forms;</li>
-    <li>validation of forms using built-in browser tools and JavaScript;</li>
+    <li>live forms validation using browser and JavaScript tools;</li>
     <li>animation;</li>
     <li>flex and grid layouts;</li>
     <li>pseudo-classes and pseudo-elements;</li>
