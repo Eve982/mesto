@@ -19,6 +19,10 @@
     opacity: .8;
 }
 
+.popup__submit-button:disabled {
+    cursor: default;
+}
+
 @media screen and (min-width: 768px) {
     .popup__submit-button {
         font-size: 18px;

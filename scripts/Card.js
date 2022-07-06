@@ -1,33 +1,33 @@
-import { openPhotoPopup } from './index.js';
+import { openPhotoPopup } from "./index.js";
 
 class Card {
-    constructor(item, openPhotoPopup) {
-        this._openPhotoPopup = openPhotoPopup;
+    constructor(item, cardTemplate) {
         this._name = item.name;
         this._image = item.link;
-        this._cardImg = '.card__image';
+        this._cardTemplate = cardTemplate;
+        this._openPhotoPopup  = openPhotoPopup;
     }
-    /** Getting card template from DOM. */
+    /** Get card template from DOM. */
     _getTemplate() {
-        const cardElement = document.querySelector('.card-template')
-                            .content.querySelector('.card').cloneNode(true);
+        const cardElement = document.querySelector('.card-template').content.querySelector('.card').cloneNode(true);
         return cardElement;
     }
-    /** Setting like / dislike. */
+    /** Set like / dislike. */
     _toggleLike(evt) {
-        evt.target.classList.toggle('card__like_active');
+        this._buttonLike.classList.toggle('card__like_active');
     }
-    /** Deleting card. */
-    _deleteCard(evt) {
-        evt.target.parentElement.remove();
+    /** Delete card. */
+    _deleteCard() {
+        this._element.remove();
+        this._element = null;
     }
-    /** Setting listeners of cards events. */
+    /** Set listeners of cards events. */
     _setEventListeners() {
-        this._element.querySelector(this._cardImg).addEventListener('click', (evt) => {
+        this._cardImage.addEventListener('click', (evt) => {
             this._openPhotoPopup(this._name, this._image);
         });
 
-        this._element.querySelector('.card__like').addEventListener('click', (evt) => {
+        this._buttonLike.addEventListener('click', (evt) => {
             this._toggleLike(evt);
         });
 
@@ -36,11 +36,13 @@ class Card {
             this._deleteCard(evt);
         });
     }
-    /** Filling card template. */
+    /** Fill card template. */
     createCard() {
         this._element = this._getTemplate();
+        this._cardImage = this._element.querySelector('.card__image');
+        this._buttonLike = this._element.querySelector('.card__like');
         this._element.querySelector('.card__name').textContent = this._name;
-        this._element.querySelector(this._cardImg).src = this._image;
+        this._cardImage.src = this._image;
         this._setEventListeners();
         return this._element;
     }
