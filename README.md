@@ -1,6 +1,6 @@
 <h2>Место</h2>
 
-Сервис предоставляет возможность создавать свой профиль и размещать в нем фотографии мест, которые Вы посетили. Сайт разработан по методологии mobile-first и адаптирован под просмотр на разрешениях экрана от 320px до 1440px.
+Приложение предоставляет возможность создавать свой профиль и размещать в нем фотографии мест, которые Вы посетили. Сайт разработан по методологии mobile-first и адаптирован под просмотр на разрешениях экрана от 320px до 1440px.
 
 <h2>Основной функционал</h2>
 <ul>
@@ -18,6 +18,9 @@
     <li>mobile-first;</li>
     <li>адаптивная, кроссбраузерная верстка;</li>
     <li>функциональное программирование JavaScript;</li>
+    <li>ООП;</li>
+    <li>ES-модули;</li>
+    <li>HTML шаблоны;</li>
     <li>слушатели событий;</li>
     <li>манипуляции с элементами DOM;</li>
     <li>template-элементы;</li>
@@ -40,12 +43,12 @@ https://eve982.github.io/mesto/index.html
 
 <h2>Mesto</h2>
 
-The service provides an opportunity to create your profile and post photos of places you have visited in it. The site is developed according to the mobile-first methodology and adapted for viewing at screen resolutions from 320px to 1440px.
+The application provides an opportunity to create your profile and post photos of places you have visited in it. The site is developed according to the mobile-first methodology and adapted for viewing at screen resolutions from 320px to 1440px.
 
 <h2>Basic functionality</h2>
 <ul>
-    <li>Editing a profile</li>
-    <li>Like/dislike</li>
+    <li>Editing a profile;</li>
+    <li>Like/dislike;</li>
     <li>Add place card: download photo and write a name;</li>
     <li>Zoom photo;</li>
     <li>Native validation;</li>
@@ -58,6 +61,9 @@ The service provides an opportunity to create your profile and post photos of pl
     <li>mobile first;</li>
     <li>adaptive, cross-browser layout;</li>
     <li>JavaScript functional programming;</li>
+    <li>OOP;</li>
+    <li>ES modules;</li>
+    <li>HTML templates;</li>
     <li>event listeners;</li>
     <li>manipulations with DOM elements;</li>
     <li>template-elements;</li>

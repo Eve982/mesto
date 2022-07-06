@@ -1,79 +1,71 @@
-/** Настройки валидации. */
-const settings = {
-  formSelector: '.popup__edit-form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit-button',
-  inactiveButtonClass: 'popup__submit-button_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error-span-message',
-};  
-/** Функция общая - добавить полю ввода стили ошибки валидации. */
-const showInputError = (formElement, inputElement, errorMessage) => {
-  /** Выбираем элемент ошибки конкретного поля ввода. */
-  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  inputElement.classList.add(settings.inputErrorClass);
-  errorElement.textContent = errorMessage;
-  errorElement.classList.add(settings.errorClass);
-};
+import { settings } from './index.js';
 
-/** Функция общая - скрыть у поля ввода стили ошибки валидации. */
-function hideInputError(formElement, inputElement) {
-  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  inputElement.classList.remove(settings.inputErrorClass);
-  errorElement.classList.remove(settings.errorClass);
-  errorElement.textContent = '';
-} 
-
-/** Функция общая - проверка валидности поля. */
-const isValid = (formElement, inputElement) => {
-  if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
-  } else {
-    hideInputError(formElement, inputElement);
+class FormValidator {
+  constructor(settings, formElement) {
+    this._settings = settings;
+    this._formElement = formElement;
   }
-}; 
-
-/** Функция общая - проверка валидности всех переданных полей конкретной формы. */
-const hasInvalidInput = (inputList) => {
-  return inputList.some((inputElement) => {
-    return !inputElement.validity.valid;
-  })
-}; 
-
-/** Функция общая - деактивация кнопок submit при повторных открытиях попапов. */
-function setDisabledButtonStyles(buttonElement) {
-  buttonElement.classList.add(settings.inactiveButtonClass);
+  /** Adding to input field error-mess and css-class with error-styles. */
+  _showInputError(formElement, inputElement, errorMessage) {
+    /** Выбираем элемент ошибки конкретного поля ввода. */
+    const errorElement = this._formElement.querySelector(`#${inputElement.id}-error`);
+    inputElement.classList.add(this._settings.inputErrorClass);
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add(this._settings.errorClass);
+  }
+  /** Hiding input field`s error message. */
+  _hideInputError(formElement, inputElement) {
+    const errorElement = this._formElement.querySelector(`#${inputElement.id}-error`);
+    inputElement.classList.remove(this._settings.inputErrorClass);
+    errorElement.classList.remove(this._settings.errorClass);
+    errorElement.textContent = '';
+  }
+  /** To check input validity. */
+  _isValid(formElement, inputElement) {
+    if (!inputElement.validity.valid) {
+      this._showInputError(formElement, inputElement, inputElement.validationMessage);
+    } else {
+      this._hideInputError(formElement, inputElement);
+    }
+  }
+  /** To check validity current form inputs. */
+  _hasInvalidInput(inputList) {
+    return inputList.some((inputElement) => {
+      return !inputElement.validity.valid;
+    })
+  }
+  /** Making submit buttons disabled when opening. */
+  _setDisabledButtonStyles(buttonElement) {
+  buttonElement.classList.add(this._settings.inactiveButtonClass);
   buttonElement.disabled = true;
 }
-
-/** Функция общая - переключатель активности кнопки submit. */
-const toggleButtonState = (inputList, buttonElement) => {
-  if(hasInvalidInput(inputList)) {
-    setDisabledButtonStyles(buttonElement);
-  } else {
-    buttonElement.classList.remove(settings.inactiveButtonClass);
-    buttonElement.disabled = false;
+  /** Switching submit button activity. */
+  _toggleButtonState(inputList, buttonElement) {
+    if(this._hasInvalidInput(inputList)) {
+      this._setDisabledButtonStyles(buttonElement);
+    } else {
+      buttonElement.classList.remove(this._settings.inactiveButtonClass);
+      buttonElement.disabled = false;
+    }
   }
+  /** Setting listeners on current form inputs. */
+  enableValidation(formElement) {
+    const inputList = Array.from(this._formElement.querySelectorAll(this._settings.inputSelector));
+    const buttonElement = this._formElement.querySelector(this._settings.submitButtonSelector);
+
+    inputList.forEach((inputElement) => {
+      this._hideInputError(this._formElement, inputElement);
+    });
+
+    this._setDisabledButtonStyles(buttonElement);
+
+    inputList.forEach((inputElement) => {
+      inputElement.addEventListener('input', () => {
+        this._toggleButtonState(inputList, buttonElement);
+        this._isValid(this._formElement, inputElement);
+      });
+    });
+  };
 }
 
-/** Функция общая - установка слушателей на поля ввода конкретной формы. */
-const setEventListeners = (formElement) => {
-  const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
-  const buttonElement = formElement.querySelector(settings.submitButtonSelector);
-  toggleButtonState(inputList, buttonElement);
-  inputList.forEach((inputElement) => {
-    inputElement.addEventListener('input', () => {
-      toggleButtonState(inputList, buttonElement);
-      isValid(formElement, inputElement);
-    });
-  });
-}; 
-
-/** Функция общая - отмена события submit по-умолчания у всех форм документа и передача форм на валидацию. */
-const enableValidation = (settings) => {
-  const formList = Array.from(document.querySelectorAll(settings.formSelector));
-  formList.forEach((formElement) => {
-      setEventListeners(formElement);
-  });
-};
-enableValidation(settings);
+export default FormValidator;
