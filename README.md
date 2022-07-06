@@ -23,7 +23,6 @@
     <li>HTML шаблоны;</li>
     <li>слушатели событий;</li>
     <li>манипуляции с элементами DOM;</li>
-    <li>template-элементы;</li>
     <li>попапы;</li>
     <li>пользовательские формы;</li>
     <li>валидация форм с использованием встроенных браузерных средств и JavaScript;</li>
@@ -66,7 +65,6 @@ The application provides an opportunity to create your profile and post photos o
     <li>HTML templates;</li>
     <li>event listeners;</li>
     <li>manipulations with DOM elements;</li>
-    <li>template-elements;</li>
     <li>popups;</li>
     <li>custom forms;</li>
     <li>validation of forms using built-in browser tools and JavaScript;</li>
