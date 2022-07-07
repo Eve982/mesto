@@ -9,11 +9,11 @@ class Card {
     }
     /** Get card template from DOM. */
     _getTemplate() {
-        const cardElement = document.querySelector('.card-template').content.querySelector('.card').cloneNode(true);
+        const cardElement = this._cardTemplate.content.querySelector('.card').cloneNode(true);
         return cardElement;
     }
     /** Set like / dislike. */
-    _toggleLike(evt) {
+    _toggleLike() {
         this._buttonLike.classList.toggle('card__like_active');
     }
     /** Delete card. */
@@ -23,25 +23,26 @@ class Card {
     }
     /** Set listeners of cards events. */
     _setEventListeners() {
-        this._cardImage.addEventListener('click', (evt) => {
+        this._cardImage.addEventListener('click', () => {
             this._openPhotoPopup(this._name, this._image);
         });
 
-        this._buttonLike.addEventListener('click', (evt) => {
-            this._toggleLike(evt);
+        this._buttonLike.addEventListener('click', () => {
+            this._toggleLike();
         });
 
         this._element.querySelector('.card__delete-button').addEventListener('click', (evt) => {
             evt.stopPropagation();
-            this._deleteCard(evt);
+            this._deleteCard();
         });
     }
     /** Fill card template. */
-    createCard() {
+    fillCard() {
         this._element = this._getTemplate();
         this._cardImage = this._element.querySelector('.card__image');
         this._buttonLike = this._element.querySelector('.card__like');
         this._element.querySelector('.card__name').textContent = this._name;
+        this._cardImage.alt = this._name;
         this._cardImage.src = this._image;
         this._setEventListeners();
         return this._element;
