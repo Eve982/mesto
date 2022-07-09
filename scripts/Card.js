@@ -9,7 +9,7 @@ class Card {
     }
     /** Get card template from DOM. */
     _getTemplate() {
-        const cardElement = this._cardTemplate.content.querySelector('.card').cloneNode(true);
+        const cardElement = document.querySelector(this._cardTemplate).content.querySelector('.card').cloneNode(true)
         return cardElement;
     }
     /** Set like / dislike. */

@@ -23,7 +23,7 @@ const inputCardName = formNewCard.elements.cardName;
 const inputLink = formNewCard.elements.cardLink;
 const cardList = document.querySelector('.cards');
 /**--------------------------------------------------------------------------------------- */
-const cardTemplate = document.querySelector('.card-template');
+const cardTemplate = '.card-template';
 const settings = {
     formSelector: '.popup__edit-form',
     inputSelector: '.popup__input',
@@ -61,7 +61,7 @@ function closePopup(popupElement) {
 document.querySelectorAll(`.${POPUP_CLASSNAME}`).forEach(item => {
     item.addEventListener('mousedown', function closePopupByOverlay (evt) {
         if (evt.target.classList.contains(POPUP_CLASSNAME)) {
-            closePopup(evt.target.closest(`.${POPUP_CLASSNAME}`));
+            closePopup(item);
         }
     });
 });
@@ -101,25 +101,25 @@ function openPhotoPopup(name, link) {
     openPopup(popupPhoto);
 }
 /** Add new card to page. */
-function createCard(cardElement) {
+function renderCard(cardElement) {
     cardList.prepend(cardElement);
 }
 /** Render card */
-function renderCard(item) {
+function createCard(item) {
     const card = new Card(item, cardTemplate);
     const cardElement = card.fillCard();
-    createCard(cardElement);
+    renderCard(cardElement);
 }
 /** Render cards from the array. */
 initialCards.forEach(item => {
-    renderCard(item);
+    createCard(item);
 });
 /** Create user card. */
 function fillUserCard() {
     const userCard = {};
     userCard.name = inputCardName.value;
     userCard.link = inputLink.value;
-    renderCard(userCard);
+    createCard(userCard);
 }
 /** Add user card throught the form. */
 formNewCard.addEventListener('submit', (evt) => {
