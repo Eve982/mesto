@@ -13,8 +13,7 @@ const userData = new UserInfo(userInfoSelectors);
 const popupNewCard = new PopupWithForm( popupCardSelector, { submitHandlerForm: (data) => {
     createCard(data);
     popupNewCard.close();
-}
-});
+}});
 newCardButton.addEventListener('click',  () => {
     validatorForms.newCard.setDisabledButtonStyles();
     validatorForms.newCard.resetErrors();
@@ -24,6 +23,7 @@ newCardButton.addEventListener('click',  () => {
 /**--------------------------------------------------------------------------------------- */
 const popupProfile = new PopupWithForm( popupProfileSelector, { submitHandlerForm: (data) => {
     userData.setUserInfo(data);
+    popupProfile.close();
     console.log(data);
 }
 });

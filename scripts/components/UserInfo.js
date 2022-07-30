@@ -13,8 +13,8 @@ export default class UserInfo {
     }
 
     setUserInfo(data) {
-        this._userName = data.profileNameInput;
-        this._userActivity = data.profileActivityInput;
+        this._userName.textContent = data.profileNameInput;
+        this._userActivity.textContent = data.profileActivityInput;
         console.log(this._userName);
     }
 } 
