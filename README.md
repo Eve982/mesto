@@ -19,7 +19,8 @@
     <li>адаптивная, кроссбраузерная верстка;</li>
     <li>функциональное программирование JavaScript;</li>
     <li>ООП;</li>
-    <li>ES-модули;</li>
+    <li>ES модули;</li>
+    <li>ES6 классы</li>
     <li>HTML шаблоны;</li>
     <li>слушатели событий;</li>
     <li>манипуляции с элементами DOM;</li>
@@ -62,6 +63,7 @@ The application provides an opportunity to create your profile and post photos o
     <li>JavaScript functional programming;</li>
     <li>OOP;</li>
     <li>ES modules;</li>
+    <li>ES6 classes;</li>
     <li>HTML templates;</li>
     <li>event listeners;</li>
     <li>manipulations with DOM elements;</li>

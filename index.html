@@ -38,9 +38,9 @@
                 <button type="button" class="popup__close-button hover-opacity" aria-label="Закрыть форму редактирования."></button>
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form novalidate action="#" name="editProfile" class="popup__edit-form">
-                    <input id="profile-name-input" required type="text" name="profileName" minlength="2" maxlength="40" class="popup__input popup__input_edit_name">
+                    <input id="profile-name-input" required type="text" name="profileNameInput" minlength="2" maxlength="40" class="popup__input popup__input_edit_name">
                     <span id="profile-name-input-error" class="popup__input-error-span-margin popup__input-error-span-message"></span>
-                    <input id="profile-activity-input" required type="text" name="profileActivity" minlength="2" maxlength="200" class="popup__input popup__input_edit_activity">
+                    <input id="profile-activity-input" required type="text" name="profileActivityInput" minlength="2" maxlength="200" class="popup__input popup__input_edit_activity">
                     <span id="profile-activity-input-error" class="popup__input-error-span-margin popup__input-error-span-message"></span>
                     <button disabled type="submit" class="popup__submit-button" aria-label="Сохранить введенные данные.">Сохранить</button>
                 </form>
@@ -52,9 +52,9 @@
                 <button type="button" class="popup__close-button hover-opacity" aria-label="Закрыть форму редактирования."></button>
                 <h3 class="popup__title">Новое место</h3>
                 <form novalidate action="#" name="newCard" class="popup__edit-form">
-                    <input id="card-name-input" required type="text" name="cardName" minlength="2" maxlength="30" placeholder="Название" class="popup__input popup__input_edit_card">
+                    <input id="card-name-input" required type="text" name="cardNameInput" minlength="2" maxlength="30" placeholder="Название" class="popup__input popup__input_edit_card">
                     <span id="card-name-input-error" class="popup__input-error-span-margin popup__input-error-span-message"></span>
-                    <input id="card-url-input" required type="url" name="cardLink" placeholder="Ссылка на картинку" class="popup__input popup__input_edit_link">
+                    <input id="card-url-input" required type="url" name="cardLinkInput" placeholder="Ссылка на картинку" class="popup__input popup__input_edit_link">
                     <span id="card-url-input-error" class="popup__input-error-span-margin popup__input-error-span-message"></span>
                     <button disabled type="submit" class="popup__submit-button" aria-label="Сохранить введенные данные.">Сохранить</button>
                 </form> 
@@ -82,7 +82,7 @@
         </li>
     </template>
     
-    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./pages/index.js"></script>
 
 </body>
 </html>

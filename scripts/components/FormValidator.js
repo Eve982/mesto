@@ -1,6 +1,6 @@
-import { settings } from './index.js';
+import { settings } from '../utils/constants.js';
 
-class FormValidator {
+export default class FormValidator {
   constructor(settings, formElement) {
     this._settings = settings;
     this._formElement = formElement;
@@ -64,5 +64,3 @@ class FormValidator {
     });
   };
 }
-
-export default FormValidator;
