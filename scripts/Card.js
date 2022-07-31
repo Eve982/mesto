@@ -7,21 +7,21 @@ class Card {
         this._cardTemplate = cardTemplate;
         this._openPhotoPopup  = openPhotoPopup;
     }
-    /** Get card template from DOM. */
+
     _getTemplate() {
         const cardElement = document.querySelector(this._cardTemplate).content.querySelector('.card').cloneNode(true)
         return cardElement;
     }
-    /** Set like / dislike. */
+
     _toggleLike() {
         this._buttonLike.classList.toggle('card__like_active');
     }
-    /** Delete card. */
+
     _deleteCard() {
         this._element.remove();
         this._element = null;
     }
-    /** Set listeners of cards events. */
+
     _setEventListeners() {
         this._cardImage.addEventListener('click', () => {
             this._openPhotoPopup(this._name, this._image);
@@ -36,7 +36,7 @@ class Card {
             this._deleteCard();
         });
     }
-    /** Fill card template. */
+
     fillCard() {
         this._element = this._getTemplate();
         this._cardImage = this._element.querySelector('.card__image');
