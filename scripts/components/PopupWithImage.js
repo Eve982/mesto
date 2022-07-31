@@ -5,13 +5,13 @@ export default class PopupWithImage extends Popup {
         super(popupSelector);
     }
 
-    open({ cardName, cardLink }) {
+    open({ cardNameInput, cardLinkInput }) {
         this._image = this._popup.querySelector('.popup__photo-image');
         this._name = this._popup.querySelector('.popup__photo-name');
 
-        this._image.src = cardLink;
-        this._image.alt = cardName;
-        this._name.textContent = cardName;
+        this._image.src = cardLinkInput;
+        this._image.alt = cardNameInput;
+        this._name.textContent = cardNameInput;
         
         super.open();
     }

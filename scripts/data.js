@@ -1,27 +1,27 @@
 const initialCards = [
     {
-      cardName: 'Архыз',
-      cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+      cardNameInput: 'Архыз',
+      cardLinkInput: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
     },
     {
-      cardName: 'Челябинская область',
-      cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+      cardNameInput: 'Челябинская область',
+      cardLinkInput: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
     },
     {
-      cardName: 'Иваново',
-      cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+      cardNameInput: 'Иваново',
+      cardLinkInput: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
     },
     {
-      cardName: 'Камчатка',
-      cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+      cardNameInput: 'Камчатка',
+      cardLinkInput: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
     },
     {
-      cardName: 'Холмогорский район',
-      cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+      cardNameInput: 'Холмогорский район',
+      cardLinkInput: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
     },
     {
-      cardName: 'Байкал',
-      cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+      cardNameInput: 'Байкал',
+      cardLinkInput: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
   ];
 export default initialCards;

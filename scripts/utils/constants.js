@@ -12,9 +12,6 @@ export const userInfoSelectors = {
   profileName: '.profile__name',
   profileActivity: '.profile__activity',
 };
-export const formNewCard = document.forms.newCard;
-export const inputCardName = formNewCard.elements.cardNameInput;
-export const inputLink = formNewCard.elements.cardLinkInput;
 export const cardTemplate = '.card-template';
 export const cardListSection = '.cards';
 export const settings = {

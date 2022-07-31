@@ -5,7 +5,7 @@ import FormValidator from '../components/FormValidator.js';
 import initialCards from '../data.js';
 import { POPUP_CLASSNAME, settings, cardTemplate, cardListSection,
     popupPhotoSelector } from './constants.js';
-/**--------------------------------------------------------------------------------------- */
+
 export function animationAfterPageLoading() {
     window.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll(`.${POPUP_CLASSNAME}`).forEach(popup => {
@@ -13,13 +13,13 @@ export function animationAfterPageLoading() {
         });
     });
 };
-/**--------------------------------------------------------------------------------------- */
+
 export const validatorForms = {};
 Array.from(document.forms).forEach((item) => {
     validatorForms[item.name] = new FormValidator(settings, item);
     validatorForms[item.name].enableValidation();
 });
-/**--------------------------------------------------------------------------------------- */
+
 const popupPhoto = new PopupWithImage(popupPhotoSelector);
 
 function handleCardClick(cardData) {

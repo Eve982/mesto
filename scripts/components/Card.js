@@ -1,12 +1,10 @@
 export default class Card {
     constructor(cardData, cardTemplate, handleCardClick) {
         this._cardData = cardData;
-        this._cardName = cardData.cardName;
-        this._cardImage = cardData.cardLink;
+        this._cardName = cardData.cardNameInput;
+        this._cardImage = cardData.cardLinkInput;
         this._cardTemplate = cardTemplate;
         this._handleCardClick = handleCardClick;
-        console.log(this._cardName);
-        console.log(this._cardImage);
     }
 
     _getTemplate() {
@@ -25,7 +23,6 @@ export default class Card {
 
     _setEventListeners() {
         this._cardImageElement.addEventListener('click', () => {
-            // const cardData = { cardName: this._name, cardLink: this._image };
             this._handleCardClick(this._cardData);
         });
 
