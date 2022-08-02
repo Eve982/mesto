@@ -1,9 +1,10 @@
-import PopupWithForm from '../scripts/components/PopupWithForm.js';
-import UserInfo from '../scripts/components/UserInfo.js';
+import '../pages/index.css';
+import PopupWithForm from './components/PopupWithForm.js';
+import UserInfo from './components/UserInfo.js';
 import { popupProfileSelector, popupCardSelector, profileEditButton,
     newCardButton, inputName, inputActivity, userInfoSelectors }
-    from '../scripts/utils/constants.js';
-import { animationAfterPageLoading, validatorForms, createCard } from '../scripts/utils/utils.js';
+    from './utils/constants.js';
+import { animationAfterPageLoading, validatorForms, createCard } from './utils/utils.js';
 /**--------------------------------------------------------------------------------------- */
 animationAfterPageLoading();
 /**--------------------------------------------------------------------------------------- */

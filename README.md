@@ -1,7 +1,6 @@
 <h2>Место</h2>
 
-Приложение предоставляет возможность создавать свой профиль и размещать в нем фотографии мест, которые Вы посетили. Сайт разработан по методологии mobile-first и адаптирован под просмотр на разрешениях экрана от 320px до 1440px. 
-# Добавить про сборку в описание и в список
+Приложение предоставляет возможность создавать свой профиль и размещать в нем фотографии мест, которые Вы посетили. Сайт разработан по методологии mobile-first и адаптирован под просмотр на разрешениях экрана от 320px до 1440px.
 
 <h2>Основной функционал</h2>
 <ul>
@@ -18,7 +17,7 @@
 <ul>
     <li>mobile-first;</li>
     <li>адаптивная, кроссбраузерная верстка;</li>
-    <li></li>
+    <li>Webpack, Babel</li>
     <li>функциональное программирование JavaScript;</li>
     <li>ООП;</li>
     <li>ES модули;</li>
@@ -62,6 +61,7 @@ The application provides an opportunity to create your profile and post photos o
 <ul>
     <li>mobile first;</li>
     <li>adaptive, cross-browser layout;</li>
+    <li>Webpack, Babel</li>
     <li>JavaScript functional programming;</li>
     <li>OOP;</li>
     <li>ES modules;</li>
