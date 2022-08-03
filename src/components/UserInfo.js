@@ -5,11 +5,10 @@ export default class UserInfo {
     }
 
     getUserInfo() {
-        const dataFormProfile = {
+        return {
             currentProfileName: this._userName.textContent,
             currentProfileActivity: this._userActivity.textContent,
         };
-        return dataFormProfile;
     }
 
     setUserInfo(data) {

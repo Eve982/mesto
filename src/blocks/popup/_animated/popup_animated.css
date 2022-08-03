@@ -1,6 +1,3 @@
 .popup_animated {
     transition: visibility .8s, opacity .8s linear;
-    -webkit-transition: visibility .8s, opacity .8 linear;
-    -moz-transition: visibility .8s, opacity .8s linear;
-    -o-transition: visibility .8s, opacity .8s linear;
 }

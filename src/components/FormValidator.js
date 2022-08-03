@@ -50,6 +50,7 @@ export default class FormValidator {
   }
   resetErrors() {
     this._inputList.forEach((inputElement) => {
+      this.setDisabledButtonStyles();
       this._hideInputError(inputElement);
     });
   }
