@@ -2,9 +2,11 @@ import Section from '../components/Section.js';
 import Card from '../components/Card.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import FormValidator from '../components/FormValidator.js';
+import PopupDeleteConfirmation from '../components/PopupDeleteConfirmation.js';
 import initialCards from './data.js';
 import { popupSelector, settings, cardTemplate, cardListSection,
-    popupPhotoSelector } from './constants.js';
+    popupPhotoSelector, popupConfirmation } from './constants.js';
+import PopupConfirmation from '../components/PopupDeleteConfirmation.js';
 
 export function animationAfterPageLoading() {
     window.addEventListener('DOMContentLoaded', () => {
@@ -26,9 +28,23 @@ popupPhoto.setEventListeners();
 function handleCardClick(cardData) {
     popupPhoto.open(cardData);
 };
+/**----------------------------------------------------------------------- */
+const popupDeleteConfirmation = new PopupDeleteConfirmation(popupConfirmation);
+popupDeleteConfirmation.setEventListeners();
+
+function handleConfirmed() {
+    popupDeleteConfirmation.open();
+    
+    console.log(`Done, ${popupDeleteConfirmation.isSubmit()}`);
+
+    // if(popupDeleteConfirmation.isSubmit()) {
+    //     popupDeleteConfirmation.close();
+    // };
+};
+/**----------------------------------------------------------------------- */
 
 function createCard(cardData) {
-    const newCard = new Card(cardData, cardTemplate, handleCardClick);
+    const newCard = new Card(cardData, cardTemplate, handleCardClick, handleConfirmed);
     return newCard.fillCard();
 };
 

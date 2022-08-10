@@ -1,6 +1,7 @@
 export const popupProfileSelector = '.popup_type_profile';
 export const popupCardSelector = '.popup_type_card';
 export const popupPhotoSelector = '.popup_type_photo';
+export const popupConfirmation = '.popup_type_confirmation';
 export const popupSelector = 'popup';
 export const popupIsOpenedSelector = 'popup_opened';
 export const profileEditButton = document.querySelector('.profile__name-edit-button');

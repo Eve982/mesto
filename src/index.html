@@ -14,7 +14,12 @@
         <main class="container">
             <section class="profile">
                 <div class="profile__info">
-                    <img src="<%=require('./images/photo-kusto.jpg')%>" alt="Фотография профиля." class="profile__avatar">
+                    <button type="button" aria-label="Изменить фотографию профиля." class="profile__avatar-edit-button">
+                        <img src="<%=require('./images/photo-kusto.jpg')%>" alt="Фотография профиля." class="profile__avatar">
+                        <div class="profile__avatar-overlay">
+                            <img src="<%=require('./images/avatar-edit-icon.svg')%>" alt="#" class="profile__avatar-edit-icon">
+                        </div>
+                    </button>
                     <div class="profile__name-container">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
                         <button type="button" class="profile__name-edit-button hover-opacity" aria-label="Редактировать профиль."></button>
@@ -75,10 +80,8 @@
         <div class="popup popup_type_confirmation">
             <div class="popup__container">
                 <button type="button" class="popup__close-button hover-opacity" aria-label="Закрыть форму редактирования."></button>
-                <h3 class="popup__title">Вы уверены</h3>
-                <form novalidate action="#" name="confirmation" class="popup__edit-form">
-                    <button disabled type="submit" class="popup__submit-button" aria-label="Подтвердить действие.">Да</button>
-                </form> 
+                <h3 class="popup__title">Вы уверены?</h3>
+                <button type="submit" class="popup__submit-button" aria-label="Подтвердить действие.">Да</button>
             </div>
         </div>
 
@@ -98,7 +101,10 @@
             <button type="button" class="card__delete-button hover-opacity" aria-label="Удалить место."></button>
             <div class="card__info-container">
                 <h2 class="card__name"></h2>
-                <button type="button" class="card__like" aria-label="Поставить лайк."></button>
+                <div class="card__like-container">
+                    <button type="button" class="card__like-icon" aria-label="Поставить лайк."></button>
+                    <span class="card__like-counter">0</span>
+                </div>
             </div>
         </li>
     </template>

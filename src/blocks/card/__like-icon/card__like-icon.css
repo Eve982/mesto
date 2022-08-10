@@ -1,13 +1,13 @@
-.card__like {
+.card__like-icon {
     width: 22px;
     height: 19px;
     padding: 0;
     border: none;
-    background-image: url(../../../images/like.svg);
+    background-image: url(../../../images/like-icon.svg);
     transition: opacity 1s linear;
     cursor: pointer;
 }
 
-.card__like:hover {
+.card__like-icon:hover {
     opacity: 0.5;
 }
