@@ -1,4 +1,4 @@
-.profile__activity {
+.profile__about {
     margin: 0;
     font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
     font-weight: 400;
@@ -12,20 +12,20 @@
 }
 
 @media screen and (min-width: 768px) {
-    .profile__activity {
+    .profile__about {
         font-size: 16px;
         line-height: 1.222;
     }
 }
 
 @media screen and (min-width: 900px) {
-    .profile__activity {
+    .profile__about {
         justify-self: start;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .profile__activity {
+    .profile__about {
         font-size: 18px;
     }
 }

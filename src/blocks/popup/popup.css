@@ -10,4 +10,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: visibility .8s, opacity .8s linear;
 }
