@@ -1,5 +1,3 @@
-import { settings } from '../utils/constants.js';
-
 export default class FormValidator {
   constructor(settings, formElement) {
     this._settings = settings;
@@ -45,12 +43,12 @@ export default class FormValidator {
     }
   }
   setDisabledButtonStyles() {
-    this._buttonElement.classList.add(settings.inactiveButtonClass);
+    this._buttonElement.classList.add(this._settings.inactiveButtonClass);
     this._buttonElement.disabled = true;
   }
-  resetErrors() {
+  resetValidation() {
+    this.setDisabledButtonStyles();
     this._inputList.forEach((inputElement) => {
-      this.setDisabledButtonStyles();
       this._hideInputError(inputElement);
     });
   }
