@@ -1,31 +1,31 @@
 .profile__about {
-    margin: 0;
-    font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.214;
-    color: #FFFFFF;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    max-width: 100%;
+  margin: 0;
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.214;
+  color: #ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-    .profile__about {
-        font-size: 16px;
-        line-height: 1.222;
-    }
+  .profile__about {
+    font-size: 16px;
+    line-height: 1.222;
+  }
 }
 
 @media screen and (min-width: 900px) {
-    .profile__about {
-        justify-self: start;
-    }
+  .profile__about {
+    justify-self: start;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-    .profile__about {
-        font-size: 18px;
-    }
+  .profile__about {
+    font-size: 18px;
+  }
 }

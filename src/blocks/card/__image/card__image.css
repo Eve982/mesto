@@ -1,9 +1,9 @@
 .card__image {
-    position: relative;
-    object-fit: cover;
-    object-position: center;
-    height: 282px;
-    width: 100%;
-    text-align: center;
-    display: block;
+  position: relative;
+  object-fit: cover;
+  object-position: center;
+  height: 282px;
+  width: 100%;
+  text-align: center;
+  display: block;
 }

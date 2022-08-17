@@ -116,9 +116,14 @@ function renderer(cardData) {
 /**--------------------------------------------------------------------------------------- */
 const popupNewCard = new PopupWithForm(popupCardSelector, {
   submitHandlerForm: (data) => {
-    return api.addNewCard(data).then((newCard) => {
-      cardsList.addItem(createCard(newCard));
-    });
+    return api
+      .addNewCard(data)
+      .then((newCard) => {
+        cardsList.addItem(createCard(newCard));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 });
 popupNewCard.setEventListeners();
@@ -129,9 +134,14 @@ newCardButton.addEventListener("click", () => {
 /**--------------------------------------------------------------------------------------- */
 const popupProfile = new PopupWithForm(popupProfileSelector, {
   submitHandlerForm: (data) => {
-    return api.updateInfo(data).then((newData) => {
-      userInfo.setUserInfo(newData);
-    });
+    return api
+      .updateInfo(data)
+      .then((newData) => {
+        userInfo.setUserInfo(newData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 });
 popupProfile.setEventListeners();
@@ -143,9 +153,14 @@ profileEditButton.addEventListener("click", () => {
 /**--------------------------------------------------------------------------------------- */
 const popupUpdateAvatar = new PopupWithForm(popupUpdateAvatarSelector, {
   submitHandlerForm: (data) => {
-    return api.updateAvatar(data).then((newAvatar) => {
-      userInfo.setUserInfo(newAvatar);
-    });
+    return api
+      .updateAvatar(data)
+      .then((newAvatar) => {
+        userInfo.setUserInfo(newAvatar);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 });
 popupUpdateAvatar.setEventListeners();
