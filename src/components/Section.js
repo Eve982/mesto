@@ -8,6 +8,7 @@ export default class Section {
     array.reverse().forEach((item) => {
       this._renderer(item);
     });
+    console.log(array);
   }
 
   addItem(element) {

@@ -58,6 +58,7 @@ Promise.all([api.getInfo(), api.getInitialCards()])
   .then(([userData, cards]) => {
     userInfo.setUserInfo(userData);
     cardsList.renderItems(cards);
+    console.log(cards);
   })
   .catch((err) => {
     console.log(err);

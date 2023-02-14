@@ -15,32 +15,31 @@
 
 <h2>Сайт создан с применением следующих технологий:</h2>
 <ul>
-    <li>mobile-first;</li>
-    <li>адаптивная, кроссбраузерная верстка;</li>
+    <li>функциональное и ООП программирование JS;</li>
     <li>Webpack, Babel</li>
-    <li>функциональное программирование JavaScript;</li>
-    <li>ООП;</li>
-    <li>ES модули;</li>
-    <li>ES6 классы</li>
+    <li>ES модули, ES6 классы;</li>
     <li>HTML шаблоны;</li>
     <li>слушатели событий;</li>
-    <li>манипуляции с элементами DOM;</li>
     <li>попапы;</li>
-    <li>пользовательские формы;</li>
-    <li>живая валидация форм с использованием браузерных средств и JavaScript;</li>
-    <li>анимация;</li>
-    <li>flex и grid-layouts;</li>
+    <li>живая валидация пользовательских форм с использованием браузерных средств и JavaScript;</li>
+    <li>адаптивная, кроссбраузерная верстка по БЭМ;</li>
     <li>псевдоклассы и псевдоэлементы;</li>
-    <li>БЭМ (Nested).</li>
+    <li>анимация;</li>
+    <li>flex и grid-layouts.</li>
 
 </ul>
   
 <h2>Ссылка на макет в Figma</h2>
+
+```
 https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1
+```
 
 <h2>Ссылка на GitHubPages</h2>
-https://eve982.github.io/mesto/index.html
 
+```
+https://eve982.github.io/mesto/index.html
+```
 
 <h2>Mesto</h2>
 
@@ -79,7 +78,13 @@ The application provides an opportunity to create your profile and post photos o
 </ul>
 
 <h2>Link to the layout in Figma</h2>
+
+```
 https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1
+```
 
 <h2>GitHubPages Link</h2>
+
+```
 https://eve982.github.io/mesto/index.html
+```
