@@ -58,23 +58,17 @@ The application provides an opportunity to create your profile and post photos o
 
 <h2>The site was created using the following technologies:</h2>
 <ul>
-    <li>mobile first;</li>
-    <li>adaptive, cross-browser layout;</li>
-    <li>Webpack, Babel</li>
-    <li>JavaScript functional programming;</li>
-    <li>OOP;</li>
-    <li>ES modules;</li>
-    <li>ES6 classes;</li>
+    <li>functional and OOP programming;</li>
+    <li>Webpack, Babel;</li>
+    <li>ES modules, ES6 classes;</li>
     <li>HTML templates;</li>
     <li>event listeners;</li>
-    <li>manipulations with DOM elements;</li>
     <li>popups;</li>
-    <li>custom forms;</li>
-    <li>live forms validation using browser and JavaScript tools;</li>
-    <li>animation;</li>
-    <li>flex and grid layouts;</li>
+    <li>live custom forms validation using browser and JavaScript tools;</li>
+    <li>adaptive, cross-browser BEM (Nested) layout;</li>
     <li>pseudo-classes and pseudo-elements;</li>
-    <li>BEM (Nested).</li>
+    <li>animation;</li>
+    <li>flex and grid layouts.</li>
 </ul>
 
 <h2>Link to the layout in Figma</h2>
